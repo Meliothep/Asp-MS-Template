@@ -17,14 +17,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-/**
+
 var kafkaUrl = builder.Configuration["Kafka:BootstrapServers"];
 var producerConfig = new ProducerConfig { BootstrapServers = kafkaUrl };
 using var producer = new ProducerBuilder<Null, string>(producerConfig).Build();
-**/
+
 
 builder.Services.AddHealthChecks()
-    //.AddKafka(producerConfig)
+    .AddKafka(producerConfig, "logs")
     ;
 
 var app = builder.Build();
