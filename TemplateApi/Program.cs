@@ -22,9 +22,11 @@ var kafkaUrl = builder.Configuration["Kafka:BootstrapServers"];
 var producerConfig = new ProducerConfig { BootstrapServers = kafkaUrl };
 using var producer = new ProducerBuilder<Null, string>(producerConfig).Build();
 
+var npgSqlString = builder.Configuration["ConnectionStrings:DefaultConnection"];
 
 builder.Services.AddHealthChecks()
     .AddKafka(producerConfig, "logs")
+    .AddNpgSql(npgSqlString!)
     ;
 
 var app = builder.Build();
@@ -39,10 +41,7 @@ app.MapHealthChecks(
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger(options =>
-    {
-        options.RouteTemplate = "/openapi/{documentName}.json";
-    });
+    app.MapOpenApi();
     app.MapScalarApiReference();
 }
 
