@@ -8,6 +8,8 @@ using HealthChecks.UI.Client;
 using Serilog;
 using Serilog.Sinks.OpenTelemetry;
 
+var builder = WebApplication.CreateBuilder(args);
+
 Log.Logger = new LoggerConfiguration()
             .Enrich.FromLogContext()
             .WriteTo.Console()
@@ -15,7 +17,7 @@ Log.Logger = new LoggerConfiguration()
                 x.Endpoint = "http://localhost:5341/ingest/otlp/v1/logs";
                 x.Protocol = OtlpProtocol.HttpProtobuf;
                 x.Headers = new Dictionary<string, string>{
-                    ["X-Seq-ApiKey"] = "D5hBWWAiw2cHcLcEr539"
+                    ["X-Seq-ApiKey"] = builder.Configuration["Seq:X-Seq-ApiKey"];
                 };
                 x.ResourceAttributes = new Dictionary<string, object>{
                     ["service.name"] = "{{cookiecutter.project_name}}"
@@ -23,7 +25,6 @@ Log.Logger = new LoggerConfiguration()
             })
             .CreateLogger();
 
-var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSerilog();
 
