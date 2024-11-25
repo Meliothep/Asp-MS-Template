@@ -1,7 +1,5 @@
-using System.Diagnostics;
 using System.Net.Http.Json;
 using Microsoft.AspNetCore.Mvc.Testing;
-using TemplateApi.Tests.Integration;
 
 
 namespace TemplateApi.Tests.Integration.Health;

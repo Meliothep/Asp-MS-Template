@@ -1,6 +1,3 @@
-
-using TemplateApi.Tests.Integration;
-
 namespace TemplateApi.Tests.Integration;
 
 [CollectionDefinition("Integration collection")]
