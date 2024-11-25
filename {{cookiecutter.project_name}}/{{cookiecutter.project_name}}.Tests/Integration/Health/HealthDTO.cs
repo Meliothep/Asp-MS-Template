@@ -1,5 +1,5 @@
 
-namespace TemplateApi.Tests.Integration.Health;
+namespace {{cookiecutter.project_name}}.Tests.Integration.Health;
 
 public class Data
 {

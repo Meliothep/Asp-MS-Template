@@ -2,7 +2,7 @@ using System.Net.Http.Json;
 using Microsoft.AspNetCore.Mvc.Testing;
 
 
-namespace TemplateApi.Tests.Integration.Health;
+namespace {{cookiecutter.project_name}}.Tests.Integration.Health;
 
 [Collection("Integration collection")]
 public sealed class HealthTest
