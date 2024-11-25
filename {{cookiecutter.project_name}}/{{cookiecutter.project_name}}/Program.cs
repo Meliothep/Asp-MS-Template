@@ -18,7 +18,7 @@ Log.Logger = new LoggerConfiguration()
                     ["X-Seq-ApiKey"] = "D5hBWWAiw2cHcLcEr539"
                 };
                 x.ResourceAttributes = new Dictionary<string, object>{
-                    ["service.name"] = "TemplateApi"
+                    ["service.name"] = "{{cookiecutter.project_name}}"
                 };
             })
             .CreateLogger();

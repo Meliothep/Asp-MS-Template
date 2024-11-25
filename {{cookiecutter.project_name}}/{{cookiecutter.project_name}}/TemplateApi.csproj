@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-     <InternalsVisibleTo Include="TemplateApi.Tests" />
+     <InternalsVisibleTo Include="{{cookiecutter.project_name}}.Tests" />
   </ItemGroup>
 
 </Project>

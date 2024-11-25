@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Testcontainers.Kafka;
 using Testcontainers.PostgreSql;
 
-namespace TemplateApi.Tests.Integration;
+namespace {{cookiecutter.project_name}}.Tests.Integration;
 public class IntegrationFixture : IAsyncLifetime
 {
     private readonly PostgreSqlContainer _dbContainer = new PostgreSqlBuilder()
