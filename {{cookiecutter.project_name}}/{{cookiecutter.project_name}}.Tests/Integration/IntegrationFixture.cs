@@ -8,10 +8,10 @@ public class IntegrationFixture : IAsyncLifetime
 {
     private readonly PostgreSqlContainer _dbContainer = new PostgreSqlBuilder()
             .WithImage("postgres:latest")
-            .WithDatabase("My_DB")
-            .WithUsername("My_User")
-            .WithPassword("My_Password")
-            .WithPortBinding(5432)
+            .WithDatabase("{{cookiecutter.project_name}}DB")
+            .WithUsername("{{cookiecutter.postgres_username}}")
+            .WithPassword("{{cookiecutter.postgres_password}}")
+            .WithPortBinding({{cookiecutter.postgres_port}})
             .Build();
 
     private readonly KafkaContainer _kafkaContainer = new KafkaBuilder()
