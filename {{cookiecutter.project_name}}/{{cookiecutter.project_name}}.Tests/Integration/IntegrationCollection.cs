@@ -1,4 +1,4 @@
-namespace TemplateApi.Tests.Integration;
+namespace {{cookiecutter.project_name}}.Tests.Integration;
 
 [CollectionDefinition("Integration collection")]
 public class IntegrationCollection : ICollectionFixture<IntegrationFixture>

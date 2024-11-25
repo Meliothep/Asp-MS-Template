@@ -1,6 +1,0 @@
-@TemplateApi_HostAddress = http://localhost:5054
-
-GET {{TemplateApi_HostAddress}}/health/
-Accept: application/json
-
-###
