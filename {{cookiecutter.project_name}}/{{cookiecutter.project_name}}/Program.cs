@@ -17,7 +17,7 @@ Log.Logger = new LoggerConfiguration()
                 x.Endpoint = "http://localhost:5341/ingest/otlp/v1/logs";
                 x.Protocol = OtlpProtocol.HttpProtobuf;
                 x.Headers = new Dictionary<string, string>{
-                    ["X-Seq-ApiKey"] = builder.Configuration["Seq:X-Seq-ApiKey"]
+                    ["X-Seq-ApiKey"] = builder.Configuration["Seq:X-Seq-ApiKey"]!
                 };
                 x.ResourceAttributes = new Dictionary<string, object>{
                     ["service.name"] = "{{cookiecutter.project_name}}"
