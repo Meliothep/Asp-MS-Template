@@ -11,7 +11,7 @@ public class IntegrationFixture : IAsyncLifetime
             .WithDatabase("{{cookiecutter.project_name}}DB")
             .WithUsername("{{cookiecutter.postgres_username}}")
             .WithPassword("{{cookiecutter.postgres_password}}")
-            .WithPortBinding({{cookiecutter.postgres_port}})
+            .WithPortBinding({{cookiecutter.postgres_port}}, 5432)
             .Build();
 
     private readonly KafkaContainer _kafkaContainer = new KafkaBuilder()
